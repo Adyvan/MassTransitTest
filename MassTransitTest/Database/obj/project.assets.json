@@ -989,6 +989,16 @@
             "rid": "win"
           }
         }
+      },
+      "Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Models.dll": {}
+        }
       }
     }
   },
@@ -3294,6 +3304,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Models/1.0.0": {
+      "type": "project",
+      "path": "../Models/Models.csproj",
+      "msbuildProject": "../Models/Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3301,7 +3316,8 @@
       "FluentMigrator >= 3.3.2",
       "FluentMigrator.Runner >= 3.3.2",
       "FluentMigrator.Runner.SqlServer >= 3.3.2",
-      "Microsoft.Data.SqlClient >= 5.0.0-preview2.22096.2"
+      "Microsoft.Data.SqlClient >= 5.0.0-preview2.22096.2",
+      "Models >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3328,7 +3344,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Code\\MassTransitTest\\MassTransitTest\\Models\\Models.csproj": {
+              "projectPath": "C:\\Code\\MassTransitTest\\MassTransitTest\\Models\\Models.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

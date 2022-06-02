@@ -1,6 +1,6 @@
 ﻿using FluentMigrator;
 
-namespace test;
+namespace Database.Migrations;
 
 [Migration(0)]
 public class AddLogTable : Migration

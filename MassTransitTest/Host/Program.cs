@@ -4,7 +4,6 @@ using MassTransit;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Host.ConfigureServices((hostContext, services) =>
 {
     services.AddMassTransit(x =>
@@ -36,7 +35,6 @@ builder.Host.ConfigureServices((hostContext, services) =>
     services.AddHostedService<Worker>();
 });
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

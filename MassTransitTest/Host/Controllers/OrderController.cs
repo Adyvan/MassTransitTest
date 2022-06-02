@@ -1,4 +1,6 @@
 using Host.CommunicationProtocols.Order;
+using Host.Contracts;
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Host.Controllers;
@@ -8,10 +10,12 @@ namespace Host.Controllers;
 public class OrderController : ControllerBase
 {
     private readonly ILogger<OrderController> _logger;
+    readonly IBus _bus;
 
-    public OrderController(ILogger<OrderController> logger)
+    public OrderController(ILogger<OrderController> logger, IBus bus)
     {
         _logger = logger;
+        _bus = bus;
     }
 
     [HttpGet]
@@ -38,23 +42,21 @@ public class OrderController : ControllerBase
     
     [HttpPost]
     [Route("Create")]
-    public OrderResponse Create([FromBody] CreateOrderRequest orderRequest)
+    public async Task<OkResult> Create([FromBody] CreateOrderRequest orderRequest)
     {
-        return new OrderResponse()
-        {
-            Id = Random.Shared.Next(),
-            OrderDate = DateTime.Now,
-            UpdatedDate = DateTime.Now,
-            CustomerName = "Name",
-            CustomerSurname = "Surname",
-            ShippedDate = DateTime.Now.AddDays(Random.Shared.Next(20)),
-            Items = orderRequest.Items.Select(item => new OrderItem()
+        await _bus.Publish(new AddOrder
             {
-                Sku = item.Sku,
-                Price = item.Price,
-                Quantity = item.Quantity,
-            }).ToList(),
-        };
+                    CustomerName = orderRequest.CustomerName,
+                    CustomerSurname = orderRequest.CustomerSurname,
+                    ShippedDate = orderRequest.ShippedDate,
+                    Items = orderRequest.Items.Select(item => new OrderItem()
+                    {
+                        Sku = item.Sku,
+                        Price = item.Price,
+                        Quantity = item.Quantity,
+                    }).ToList()
+            });
+        return new OkResult();
     }
     
     [HttpPut]

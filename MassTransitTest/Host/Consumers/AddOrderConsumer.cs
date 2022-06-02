@@ -15,7 +15,7 @@ public class AddOrderConsumer :
 
     public Task Consume(ConsumeContext<AddOrder> context)
     {
-        _logger.LogInformation($"Consume mess {context.Message.Value}");
+        _logger.LogInformation($"Consume mess {context.Message.CustomerName}");
         return Task.CompletedTask;
     }
 }

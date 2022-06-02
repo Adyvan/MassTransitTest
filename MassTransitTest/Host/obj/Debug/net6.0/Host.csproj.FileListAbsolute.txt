@@ -25,3 +25,8 @@ C:\Code\MassTransitTest\MassTransitTest\Host\obj\Debug\net6.0\refint\Host.dll
 C:\Code\MassTransitTest\MassTransitTest\Host\obj\Debug\net6.0\Host.pdb
 C:\Code\MassTransitTest\MassTransitTest\Host\obj\Debug\net6.0\Host.genruntimeconfig.cache
 C:\Code\MassTransitTest\MassTransitTest\Host\obj\Debug\net6.0\ref\Host.dll
+C:\Code\MassTransitTest\MassTransitTest\Host\bin\Debug\net6.0\MassTransit.dll
+C:\Code\MassTransitTest\MassTransitTest\Host\bin\Debug\net6.0\MassTransit.Abstractions.dll
+C:\Code\MassTransitTest\MassTransitTest\Host\bin\Debug\net6.0\MassTransit.RabbitMqTransport.dll
+C:\Code\MassTransitTest\MassTransitTest\Host\bin\Debug\net6.0\RabbitMQ.Client.dll
+C:\Code\MassTransitTest\MassTransitTest\Host\bin\Debug\net6.0\System.Text.Json.dll

@@ -5,8 +5,6 @@ namespace Host.CommunicationProtocols.Order;
 public class CreateOrderRequest
 {
     public long OrderNumber { get; set; }
-    public DateTime OrderDate { get; set; }
-    public DateTime UpdatedDate { get; set; }
     public string CustomerName { get; set; }
     public string CustomerSurname { get; set; }
     

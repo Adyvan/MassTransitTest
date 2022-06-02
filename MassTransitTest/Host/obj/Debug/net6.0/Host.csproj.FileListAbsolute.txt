@@ -30,3 +30,6 @@ C:\Code\MassTransitTest\MassTransitTest\Host\bin\Debug\net6.0\MassTransit.Abstra
 C:\Code\MassTransitTest\MassTransitTest\Host\bin\Debug\net6.0\MassTransit.RabbitMqTransport.dll
 C:\Code\MassTransitTest\MassTransitTest\Host\bin\Debug\net6.0\RabbitMQ.Client.dll
 C:\Code\MassTransitTest\MassTransitTest\Host\bin\Debug\net6.0\System.Text.Json.dll
+C:\Code\MassTransitTest\MassTransitTest\Host\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Code\MassTransitTest\MassTransitTest\Host\bin\Debug\net6.0\Models.dll
+C:\Code\MassTransitTest\MassTransitTest\Host\bin\Debug\net6.0\Models.pdb

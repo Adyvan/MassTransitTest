@@ -1,0 +1,12 @@
+C:\Code\MassTransitTest\MassTransitTest\Models\bin\Debug\net6.0\Models.deps.json
+C:\Code\MassTransitTest\MassTransitTest\Models\bin\Debug\net6.0\Models.dll
+C:\Code\MassTransitTest\MassTransitTest\Models\bin\Debug\net6.0\Models.pdb
+C:\Code\MassTransitTest\MassTransitTest\Models\obj\Debug\net6.0\Models.csproj.AssemblyReference.cache
+C:\Code\MassTransitTest\MassTransitTest\Models\obj\Debug\net6.0\Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Code\MassTransitTest\MassTransitTest\Models\obj\Debug\net6.0\Models.AssemblyInfoInputs.cache
+C:\Code\MassTransitTest\MassTransitTest\Models\obj\Debug\net6.0\Models.AssemblyInfo.cs
+C:\Code\MassTransitTest\MassTransitTest\Models\obj\Debug\net6.0\Models.csproj.CoreCompileInputs.cache
+C:\Code\MassTransitTest\MassTransitTest\Models\obj\Debug\net6.0\Models.dll
+C:\Code\MassTransitTest\MassTransitTest\Models\obj\Debug\net6.0\refint\Models.dll
+C:\Code\MassTransitTest\MassTransitTest\Models\obj\Debug\net6.0\Models.pdb
+C:\Code\MassTransitTest\MassTransitTest\Models\obj\Debug\net6.0\ref\Models.dll

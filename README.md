@@ -8,10 +8,10 @@ get to know technology
 
 ## Tasks
 - [ ] Create controller for 
-  - [ ] get orders
-  - [ ] create new order
+  - [x] get orders
+  - [x] create new order
   - [ ] update state of order
-- [ ] Use MSSql via NHibernate
+- [x] Use MSSql via NHibernate
 - [ ] Create Inicial Migration via FluentMigrator
 - [ ] Use state machine for status order via masstransit automatonymous
 - [ ] Create docker-compose file

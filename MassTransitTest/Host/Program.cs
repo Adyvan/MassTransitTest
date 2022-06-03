@@ -1,4 +1,5 @@
 using System.Reflection;
+using Host.Dependency;
 using MassTransit;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,6 +31,8 @@ builder.Host.ConfigureServices((hostContext, services) =>
             cfg.ConfigureEndpoints(context);
         });
     });
+    
+    Dependencies.SetDependencies(services);
 });
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

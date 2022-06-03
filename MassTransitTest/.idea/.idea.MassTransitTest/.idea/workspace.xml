@@ -12,11 +12,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ad24134-e446-47b2-acef-846f983f2b9c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Host/Consumers/DbSession.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Host/Data/IDbSession.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Host/Data/Mapping/OrderSagaItemMap.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Host/Data/Mapping/OrderSagaMap.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Host/Dependency/Dependencies.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Host/Services/ITimeService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Host/Services/TimeService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MassTransitTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MassTransitTest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Host/CommunicationProtocols/Order/CreateOrderRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Host/CommunicationProtocols/Order/CreateOrderRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/obj/Debug/net6.0/Database.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Database/obj/Debug/net6.0/Database.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Database/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Host/Consumers/AddOrderConsumer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Host/Consumers/AddOrderConsumer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Host/Contracts/AddOrder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Host/Contracts/AddOrder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Host/Controllers/OrderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Host/Controllers/OrderController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/Host.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Host/Host.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Host/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Host/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Host/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Host.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Host.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Host.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Host.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Host.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Host.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Models.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Models.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Models.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Models.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Host/bin/Debug/net6.0/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Host/bin/Debug/net6.0/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/Debug/net6.0/Host.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Host/obj/Debug/net6.0/Host.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/Debug/net6.0/Host.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Host/obj/Debug/net6.0/Host.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/Debug/net6.0/Host.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Host/obj/Debug/net6.0/Host.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/Debug/net6.0/Host.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Host/obj/Debug/net6.0/Host.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/Debug/net6.0/Host.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Host/obj/Debug/net6.0/Host.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/Debug/net6.0/Host.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Host/obj/Debug/net6.0/Host.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/Debug/net6.0/ref/Host.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Host/obj/Debug/net6.0/ref/Host.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/Debug/net6.0/refint/Host.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Host/obj/Debug/net6.0/refint/Host.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/Host.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Host/obj/Host.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Host/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Host/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Host/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Host/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/Host/obj/staticwebassets.pack.sentinel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HostTest/obj/Debug/net6.0/HostTest.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HostTest/obj/Debug/net6.0/HostTest.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HostTest/obj/Debug/net6.0/HostTest.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HostTest/obj/Debug/net6.0/HostTest.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HostTest/obj/HostTest.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/HostTest/obj/HostTest.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HostTest/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/HostTest/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HostTest/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HostTest/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HostTest/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/HostTest/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/OrderSagaItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/OrderSagaItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/bin/Debug/net6.0/Models.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Models/bin/Debug/net6.0/Models.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/bin/Debug/net6.0/Models.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Models/bin/Debug/net6.0/Models.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/obj/Debug/net6.0/Models.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Models/obj/Debug/net6.0/Models.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/obj/Debug/net6.0/Models.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Models/obj/Debug/net6.0/Models.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/obj/Debug/net6.0/ref/Models.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Models/obj/Debug/net6.0/ref/Models.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/obj/Debug/net6.0/refint/Models.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Models/obj/Debug/net6.0/refint/Models.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Models/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +72,12 @@
     <setting file="file://$PROJECT_DIR$/MassTransitTest/Controllers/WeatherForecastController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MassTransitTest/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MassTransitTest/WeatherForecast.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/91c1dbd088e54cd5874c8c51d852f77843b400/15/5560288b/ISessionFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2a6285496daf81e8de6b36e3fcf524d7fe2bd67b4b979de87f76d86b37a0dd/ToManyBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/382ff0bd29dac925c9d16054587110b23c55cbba68d5ad4b36facf90ee7190b5/IConsumer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3b2165c07b8ba5842ba9f1534f3674b69347d9a3a9f9dd84c8fb7bc26be81/FluentMappingsContainer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/437dff7bf98c581e368abaf787674681552e2a799f21ceb0a0576471af5effdf/WebApplication.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/46f179ada68ff5c03df8efd2f55671e26a3b88c73b4b1e384d10be991ca321f/ConfigureHostBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a9cbda3784706aeeed61f1a08a18046925b69f777943eca27fbbcca09dff60/DateTime.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d7dbf2d91157970da8221a96352bc5a781fe0b730ed7d1525211eb4b81cec/IMigrationRunner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e9d4c06231c6a0d3979717439ad356758f37996910371cfe36638247a3ffcfd/ConsumeContext.cs" root0="SKIP_HIGHLIGHTING" />
@@ -144,7 +193,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654092487788</updated>
-      <workItem from="1654092487788" duration="18900000" />
+      <workItem from="1654092487788" duration="28186000" />
     </task>
     <servers />
   </component>

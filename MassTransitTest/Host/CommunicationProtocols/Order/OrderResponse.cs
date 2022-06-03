@@ -14,6 +14,6 @@ public class OrderResponse
     [JsonProperty(NullValueHandling=NullValueHandling.Ignore)]
     public DateTime? ShippedDate { get; set; }
     
-    public IList<OrderItem> Items { get; set; }
+    public List<OrderItem> Items { get; set; }
 
 }

@@ -23,6 +23,7 @@ public class AddOrderConsumer :
 
     public async Task Consume(ConsumeContext<AddOrder> context)
     {
+        
         var newOrder = new OrderSaga
         {
             OrderDate = _time.Now,
@@ -37,12 +38,25 @@ public class AddOrderConsumer :
                 Quantity = item.Quantity,
             }).ToList(),
         };
-        
-        using var db = _db.GetSession();
-        using var session = db.OpenSession();
-        using var transaction = session.BeginTransaction();
-        
-        await session.SaveOrUpdateAsync(newOrder);
-        await transaction.CommitAsync();
+        try
+        {
+            using var db = _db.GetSession();
+            using var session = db.OpenSession();
+            using var transaction = session.BeginTransaction();
+
+            await session.SaveOrUpdateAsync(newOrder);
+            await transaction.CommitAsync();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError($"1 {ex.ToString()}");
+            _logger.LogError($"2 {ex.Message}");
+            var err = ex;
+            while (err.InnerException != null)
+            {
+                err = err.InnerException;
+                _logger.LogError($"3 {err.Message}");
+            }
+        }
     }
 }

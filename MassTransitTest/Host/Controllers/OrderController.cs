@@ -1,5 +1,6 @@
 using Host.CommunicationProtocols.Order;
 using Host.Contracts;
+using Host.Services;
 using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,35 +10,39 @@ namespace Host.Controllers;
 [Route("[controller]")]
 public class OrderController : ControllerBase
 {
-    private readonly ILogger<OrderController> _logger;
+    readonly ILogger<OrderController> _logger;
     readonly IBus _bus;
+    private readonly IOrderRepositoryService _repository;
 
-    public OrderController(ILogger<OrderController> logger, IBus bus)
+    public OrderController(ILogger<OrderController> logger, IBus bus, IOrderRepositoryService repository)
     {
         _logger = logger;
         _bus = bus;
+        _repository = repository;
     }
 
     [HttpGet]
     [Route("Orders")]
     public IEnumerable<OrderResponse> Get()
     {
-        return Enumerable.Range(1, 5).Select(index => new OrderResponse()
+        return _repository.GetOrders().Select(order =>
+        {
+            return new OrderResponse
             {
-                Id = index,
-                OrderDate = DateTime.Now.AddDays(Random.Shared.Next(-20,0)),
-                UpdatedDate = DateTime.Now,
-                CustomerName = $"Name {index}",
-                CustomerSurname = $"Surname {index}",
-                ShippedDate = DateTime.Now.AddDays(Random.Shared.Next(20)),
-                Items = Enumerable.Range(1, 5).Select(itemIndex => new OrderItem()
+                Id = order.Id,
+                OrderDate = order.OrderDate,
+                UpdatedDate = order.UpdatedDate,
+                CustomerName = order.CustomerName,
+                CustomerSurname = order.CustomerSurname,
+                ShippedDate = order.ShippedDate,
+                Items = order.Items.Select(item => new OrderItem()
                 {
-                    Sku = Random.Shared.Next(),
-                    Price = Random.Shared.Next(10000),
-                    Quantity = (byte) Random.Shared.Next(byte.MaxValue),
+                    Sku = item.Sku,
+                    Price = item.Price,
+                    Quantity = item.Quantity,
                 }).ToList(),
-            })
-            .ToArray();
+            };
+        });
     }
     
     [HttpPost]

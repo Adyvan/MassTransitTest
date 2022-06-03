@@ -7,7 +7,8 @@ public static class Dependencies
 {
     public static void SetDependencies(IServiceCollection services)
     {
-        services.AddSingleton<IDbSession, DbSession>();
+        services.AddScoped<IDbSession, DbSession>();
         services.AddSingleton<ITimeService, TimeService>();
+        services.AddScoped<IOrderRepositoryService, OrderRepositoryService>();
     }
 }

@@ -22,7 +22,7 @@ static class Program
             .AddFluentMigratorCore()
             .ConfigureRunner(rb => rb
                 .AddSqlServer()
-                .WithGlobalConnectionString("Data Source=test.db")
+                .WithGlobalConnectionString("Server=localhost;Database=MassTest;User Id=sa;Password=yourStrong(!)Password123;")
                 .ScanIn(typeof(AddLogTable).Assembly).For.Migrations())
             .AddLogging(lb => lb.AddFluentMigratorConsole())
             .BuildServiceProvider(false);

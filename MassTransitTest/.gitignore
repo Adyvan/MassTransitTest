@@ -28,7 +28,6 @@ build/
 bld/
 **/[Bb]in/
 **/[Oo]bj/
-obj/
 [Oo]ut/
 msbuild.log
 msbuild.err
@@ -36,7 +35,3 @@ msbuild.wrn
 
 # Visual Studio 2015
 .vs/
-
-MassTransitTest/Database/bin/
-MassTransitTest/Database/obj/
-MassTransitTest/.idea/

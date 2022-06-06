@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Reflection;
-using Database.Migrations;
+﻿using Database.Migrations;
 using FluentMigrator.Runner;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.SqlServer.Management.Smo;
@@ -29,7 +26,7 @@ static class Program
             .AddFluentMigratorCore()
             .ConfigureRunner(rb => rb
                 .AddSqlServer()
-                .WithGlobalConnectionString("Server=localhost;Database=MassTest;User Id=sa;Password=yourStrong(!)Password123;")
+                .WithGlobalConnectionString("Server=localhost;Database=MassTest;User Id=sa;Password=yourStrong(!)Password123;Encrypt=False;")
                 .ScanIn(typeof(OrderTablesMigration).Assembly).For.Migrations())
             .AddLogging(lb => lb.AddFluentMigratorConsole())
             .BuildServiceProvider(false);

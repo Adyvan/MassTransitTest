@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "hdRl8yAb1W9joDxT0uYSsVOBta78ZvGY1qLLJPABtugDLAbTFGbe06xWQjumWzJa+U3RnTgjnoS6oZvBpQ4haw==",
+  "dgSpecHash": "LRcRYlX672/E1qRulHbMPfmShrKRYGfnpG/1KIPv6gXQcKWSlGmucd5hVb6h+ViZl+1TLlURYHFC0yB6lh12gQ==",
   "success": true,
   "projectFilePath": "C:\\Code\\MassTransitTest\\MassTransitTest\\Database\\Database.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\u.adushkevich\\.nuget\\packages\\azure.core\\1.20.0\\azure.core.1.20.0.nupkg.sha512",
-    "C:\\Users\\u.adushkevich\\.nuget\\packages\\azure.identity\\1.5.0\\azure.identity.1.5.0.nupkg.sha512",
+    "C:\\Users\\u.adushkevich\\.nuget\\packages\\azure.core\\1.6.0\\azure.core.1.6.0.nupkg.sha512",
+    "C:\\Users\\u.adushkevich\\.nuget\\packages\\azure.identity\\1.3.0\\azure.identity.1.3.0.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\fluentmigrator\\3.3.2\\fluentmigrator.3.3.2.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\fluentmigrator.abstractions\\3.3.2\\fluentmigrator.abstractions.3.3.2.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\fluentmigrator.extensions.oracle\\3.3.2\\fluentmigrator.extensions.oracle.3.3.2.nupkg.sha512",
@@ -27,8 +27,8 @@
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\fluentmigrator.runner.sqlserverce\\3.3.2\\fluentmigrator.runner.sqlserverce.3.3.2.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.0.0\\microsoft.bcl.asyncinterfaces.1.0.0.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
-    "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.0-preview2.22096.2\\microsoft.data.sqlclient.5.0.0-preview2.22096.2.nupkg.sha512",
-    "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.0.0-preview2.22084.1\\microsoft.data.sqlclient.sni.runtime.5.0.0-preview2.22084.1.nupkg.sha512",
+    "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.data.sqlclient\\4.1.0\\microsoft.data.sqlclient.4.1.0.nupkg.sha512",
+    "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\4.0.0\\microsoft.data.sqlclient.sni.runtime.4.0.0.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\2.0.1\\microsoft.extensions.configuration.abstractions.2.0.1.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\2.0.0\\microsoft.extensions.dependencyinjection.2.0.0.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.0.0\\microsoft.extensions.dependencyinjection.abstractions.2.0.0.nupkg.sha512",
@@ -36,8 +36,8 @@
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.0.1\\microsoft.extensions.logging.abstractions.2.0.1.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.extensions.options\\2.0.1\\microsoft.extensions.options.2.0.1.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.extensions.primitives\\2.0.0\\microsoft.extensions.primitives.2.0.0.nupkg.sha512",
-    "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.identity.client\\4.30.1\\microsoft.identity.client.4.30.1.nupkg.sha512",
-    "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.identity.client.extensions.msal\\2.18.4\\microsoft.identity.client.extensions.msal.2.18.4.nupkg.sha512",
+    "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.identity.client\\4.22.0\\microsoft.identity.client.4.22.0.nupkg.sha512",
+    "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.identity.client.extensions.msal\\2.16.5\\microsoft.identity.client.extensions.msal.2.16.5.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.8.0\\microsoft.identitymodel.jsonwebtokens.6.8.0.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.identitymodel.logging\\6.8.0\\microsoft.identitymodel.logging.6.8.0.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.8.0\\microsoft.identitymodel.protocols.6.8.0.nupkg.sha512",
@@ -45,19 +45,25 @@
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.8.0\\microsoft.identitymodel.tokens.6.8.0.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.sqlserver.scripting\\11.0.2100.61\\microsoft.sqlserver.scripting.11.0.2100.61.nupkg.sha512",
+    "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.sqlserver.sqlmanagementobjects\\160.1911221.0-preview\\microsoft.sqlserver.sqlmanagementobjects.160.1911221.0-preview.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\u.adushkevich\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
+    "C:\\Users\\u.adushkevich\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\u.adushkevich\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\u.adushkevich\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\system.componentmodel.annotations\\4.4.1\\system.componentmodel.annotations.4.4.1.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",
+    "C:\\Users\\u.adushkevich\\.nuget\\packages\\system.data.sqlclient\\4.8.3\\system.data.sqlclient.4.8.3.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.0\\system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\system.formats.asn1\\5.0.0\\system.formats.asn1.5.0.0.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.8.0\\system.identitymodel.tokens.jwt.6.8.0.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
-    "C:\\Users\\u.adushkevich\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
-    "C:\\Users\\u.adushkevich\\.nuget\\packages\\system.memory.data\\1.0.2\\system.memory.data.1.0.2.nupkg.sha512",
+    "C:\\Users\\u.adushkevich\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\system.reflection.primitives\\4.3.0\\system.reflection.primitives.4.3.0.nupkg.sha512",
@@ -75,9 +81,20 @@
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\system.text.json\\4.6.0\\system.text.json.4.6.0.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
-    "C:\\Users\\u.adushkevich\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "C:\\Users\\u.adushkevich\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.2\\system.threading.tasks.extensions.4.5.2.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\system.valuetuple\\4.4.0\\system.valuetuple.4.4.0.nupkg.sha512",
     "C:\\Users\\u.adushkevich\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.SqlServer.Scripting 11.0.2100.61' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.SqlServer.Scripting",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

@@ -12,11 +12,24 @@
       <PackageReference Include="FluentMigrator" Version="3.3.2" />
       <PackageReference Include="FluentMigrator.Runner" Version="3.3.2" />
       <PackageReference Include="FluentMigrator.Runner.SqlServer" Version="3.3.2" />
-      <PackageReference Include="Microsoft.Data.SqlClient" Version="5.0.0-preview2.22096.2" />
+      <PackageReference Include="Microsoft.Data.SqlClient" Version="4.1.0" />
+      <PackageReference Include="Microsoft.SqlServer.Scripting" Version="11.0.2100.61" />
+      <PackageReference Include="Microsoft.SqlServer.SqlManagementObjects" Version="160.1911221.0-preview" />
+      <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Models\Models.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="CreateDbIfNeeded.sql" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="SqlScripts\CreateDbIfNeeded.sql">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>

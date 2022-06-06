@@ -12,9 +12,86 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ad24134-e446-47b2-acef-846f983f2b9c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Host/Consumers/AddOrderConsumer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Host/Consumers/AddOrderConsumer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Host/Services/IOrderRepositoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Host/Services/IOrderRepositoryService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Host/Services/OrderRepositoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Host/Services/OrderRepositoryService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Database/Migrations/OrderTablesMigration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Database/SqlScripts/CreateDbIfNeeded.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MassTransitTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MassTransitTest/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/Database.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Database/Database.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/Migrations/AddLogTable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Database/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/obj/Database.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Database/obj/Database.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/obj/Debug/net6.0/Database.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Database/obj/Debug/net6.0/Database.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/obj/Debug/net6.0/Database.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Database/obj/Debug/net6.0/Database.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Database/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Database/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Database/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Database/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Antlr3.Runtime.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/FluentNHibernate.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Host.deps.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Host.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Host.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Host.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Host.runtimeconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Iesi.Collections.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/MassTransit.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/MassTransit.RabbitMqTransport.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/MassTransit.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Microsoft.OpenApi.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Models.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Models.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/NHibernate.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Newtonsoft.Json.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/RabbitMQ.Client.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Remotion.Linq.EagerFetching.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Remotion.Linq.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/System.Configuration.ConfigurationManager.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/System.Data.SqlClient.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/System.Security.Cryptography.ProtectedData.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/System.Text.Json.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/appsettings.Development.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/appsettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp2.1/System.Data.SqlClient.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/runtimes/win-arm64/native/sni.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/runtimes/win-x64/native/sni.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/runtimes/win-x86/native/sni.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/runtimes/win/lib/netcoreapp2.1/System.Data.SqlClient.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/Debug/net6.0/Host.MvcApplicationPartsAssemblyInfo.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/Debug/net6.0/Host.MvcApplicationPartsAssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/Debug/net6.0/Host.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Host/obj/Debug/net6.0/Host.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/Debug/net6.0/Host.csproj.CopyComplete" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/Debug/net6.0/Host.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/Debug/net6.0/Host.csproj.FileListAbsolute.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/Debug/net6.0/Host.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/Debug/net6.0/Host.genruntimeconfig.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/Debug/net6.0/Host.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/Debug/net6.0/apphost.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/Debug/net6.0/ref/Host.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/Debug/net6.0/refint/Host.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/Debug/net6.0/staticwebassets.build.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Host/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Host/obj/staticwebassets.pack.sentinel" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HostTest/obj/Debug/net6.0/HostTest.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HostTest/obj/Debug/net6.0/HostTest.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HostTest/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/HostTest/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MassTransitTest/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MassTransitTest/obj/Debug/net6.0/MassTransitTest.AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MassTransitTest/obj/Debug/net6.0/MassTransitTest.AssemblyInfoInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MassTransitTest/obj/Debug/net6.0/MassTransitTest.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MassTransitTest/obj/Debug/net6.0/MassTransitTest.GlobalUsings.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MassTransitTest/obj/Debug/net6.0/MassTransitTest.assets.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MassTransitTest/obj/Debug/net6.0/MassTransitTest.csproj.AssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MassTransitTest/obj/MassTransitTest.csproj.nuget.dgspec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MassTransitTest/obj/MassTransitTest.csproj.nuget.g.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MassTransitTest/obj/MassTransitTest.csproj.nuget.g.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MassTransitTest/obj/project.assets.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MassTransitTest/obj/project.nuget.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MassTransitTest/obj/project.packagespec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MassTransitTest/obj/rider.project.restore.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/obj/Debug/net6.0/Models.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Models/obj/Debug/net6.0/Models.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Models/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +102,9 @@
     <setting file="file://$PROJECT_DIR$/MassTransitTest/Controllers/WeatherForecastController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MassTransitTest/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MassTransitTest/WeatherForecast.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5932ec8333d4414598f4e964458b36ce29c58/67/91dc2c1b/ConnectionManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5932ec8333d4414598f4e964458b36ce29c58/c9/f00fd508/ServerConnection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6700af614e8b4423be3ba43de0c1b3b3372c58/85/34d9be13/Server.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/91c1dbd088e54cd5874c8c51d852f77843b400/15/5560288b/ISessionFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2a6285496daf81e8de6b36e3fcf524d7fe2bd67b4b979de87f76d86b37a0dd/ToManyBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/382ff0bd29dac925c9d16054587110b23c55cbba68d5ad4b36facf90ee7190b5/IConsumer.cs" root0="SKIP_HIGHLIGHTING" />
@@ -40,6 +120,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d18fe9082617511143a54dca622f32945f652ef5d134ef74b3b89c8a32b4/IScanInForBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d7dbf2d91157970da8221a96352bc5a781fe0b730ed7d1525211eb4b81cec/IMigrationRunner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e9d4c06231c6a0d3979717439ad356758f37996910371cfe36638247a3ffcfd/ConsumeContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ebd8e93554658a9b615ae50cacf5155a887d11c5becacb9bdbe57ccadb738/MigrationRunner.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -52,19 +133,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "RiderNuGetOptionsPageId",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Host">
+}]]></component>
+  <component name="RunManager" selected=".NET Project.Database">
     <configuration name="Database" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -153,7 +236,9 @@
       <option name="presentableId" value="Default" />
       <updated>1654092487788</updated>
       <workItem from="1654092487788" duration="34102000" />
-      <workItem from="1654263887818" duration="4775000" />
+      <workItem from="1654263887818" duration="9747000" />
+      <workItem from="1654504094205" duration="1152000" />
+      <workItem from="1654505326375" duration="1704000" />
     </task>
     <servers />
   </component>

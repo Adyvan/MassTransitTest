@@ -56,7 +56,19 @@
             },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
-              "version": "[5.0.0-preview2.22096.2, )"
+              "version": "[4.1.0, )"
+            },
+            "Microsoft.SqlServer.Scripting": {
+              "target": "Package",
+              "version": "[11.0.2100.61, )"
+            },
+            "Microsoft.SqlServer.SqlManagementObjects": {
+              "target": "Package",
+              "version": "[160.1911221.0-preview, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
             }
           },
           "imports": [

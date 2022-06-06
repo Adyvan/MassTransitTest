@@ -37,6 +37,6 @@ msbuild.wrn
 # Visual Studio 2015
 .vs/
 
-MassTransitTest/Database/bin/
-MassTransitTest/Database/obj/
-MassTransitTest/.idea/
+Database/bin/
+Database/obj/
+.idea/

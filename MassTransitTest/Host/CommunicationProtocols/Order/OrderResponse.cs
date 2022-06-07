@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Models;
+using Newtonsoft.Json;
 
 namespace Host.CommunicationProtocols.Order;
 
@@ -15,5 +16,7 @@ public class OrderResponse
     public DateTime? ShippedDate { get; set; }
     
     public List<OrderItem> Items { get; set; }
+    
+    public OrderStatus OrderStatus { get; set; }
 
 }

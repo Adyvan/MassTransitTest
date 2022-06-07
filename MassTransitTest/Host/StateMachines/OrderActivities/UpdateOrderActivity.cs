@@ -1,4 +1,5 @@
 ﻿using Host.Contracts;
+using Host.Helpers;
 using Host.Services;
 using MassTransit;
 
@@ -10,9 +11,13 @@ public class UpdateOrderActivity : IStateMachineActivity<OrderSaga, OrderStatusC
     readonly ILogger<UpdateOrderActivity> _logger;
     readonly IOrderRepositoryService _orderRepository;
 
-    public UpdateOrderActivity(ConsumeContext context)
+    public UpdateOrderActivity(ConsumeContext context,
+        ILogger<UpdateOrderActivity> logger,
+        IOrderRepositoryService orderRepository)
     {
         _context = context;
+        _logger = logger;
+        _orderRepository = orderRepository;
     }
 
     public void Probe(ProbeContext context)
@@ -30,7 +35,7 @@ public class UpdateOrderActivity : IStateMachineActivity<OrderSaga, OrderStatusC
         _logger.LogInformation($"Execute from {context.Saga.OrderStatus} to {context.Message.NextStatus}");
         context.Saga.OrderStatus = context.Message.NextStatus;
 
-        await _orderRepository.UpdateOrderStatus(context.Saga.OrderSagaId, context.Message.NextStatus).ConfigureAwait(false);
+        await _orderRepository.UpdateOrderStatus(context.Saga.CorrelationId.ToId(), context.Message.NextStatus).ConfigureAwait(false);
         
         await next.Execute(context).ConfigureAwait(false);
     }

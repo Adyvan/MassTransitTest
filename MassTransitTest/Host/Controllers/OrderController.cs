@@ -1,8 +1,10 @@
 using Host.CommunicationProtocols.Order;
 using Host.Contracts;
+using Host.Helpers;
 using Host.Services;
 using MassTransit;
 using Microsoft.AspNetCore.Mvc;
+using Models;
 
 namespace Host.Controllers;
 
@@ -35,6 +37,7 @@ public class OrderController : ControllerBase
                 CustomerName = order.CustomerName,
                 CustomerSurname = order.CustomerSurname,
                 ShippedDate = order.ShippedDate,
+                OrderStatus = order.OrderStatus,
                 Items = order.Items.Select(item => new OrderItem()
                 {
                     Sku = item.Sku,
@@ -65,24 +68,10 @@ public class OrderController : ControllerBase
     }
     
     [HttpPut]
-    [Route("Update")]
-
-    public OrderResponse Update([FromBody] CreateOrderRequest orderRequest)
+    [Route("{id:long}/UpdateStatus")]
+    public async Task<ActionResult> Update([FromRoute] long id, [FromQuery] OrderStatus newState)
     {
-        return new OrderResponse()
-        {
-            Id = Random.Shared.Next(),
-            OrderDate = DateTime.Now,
-            UpdatedDate = DateTime.Now,
-            CustomerName = "Name",
-            CustomerSurname = "Surname",
-            ShippedDate = DateTime.Now.AddDays(Random.Shared.Next(20)),
-            Items = orderRequest.Items.Select(item => new OrderItem()
-            {
-                Sku = item.Sku,
-                Price = item.Price,
-                Quantity = item.Quantity,
-            }).ToList(),
-        };
+        await _bus.Publish(new OrderStatusChanged(id.ToGuid(), newState));
+        return new OkResult();
     }
 }

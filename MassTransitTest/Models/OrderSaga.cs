@@ -12,4 +12,12 @@ public class OrderSaga
     public virtual DateTime? ShippedDate { get; set; }
 
     public virtual IList<OrderSagaItem> Items { get; set; }
+    
+    public virtual int CurrentState { get; set; }
+
+    public virtual OrderStatus OrderStatus
+    {
+        get => (OrderStatus)CurrentState;
+        set => CurrentState = (int)value;
+    }
 }

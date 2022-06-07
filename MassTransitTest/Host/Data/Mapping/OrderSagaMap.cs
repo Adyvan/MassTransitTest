@@ -14,6 +14,7 @@ public class OrderSagaMap : ClassMap<OrderSaga>
         Map(x => x.UpdatedDate);
         Map(x => x.ShippedDate);
         Map(x => x.OrderNumber);
+        Map(x => x.CurrentState);
         HasMany(x => x.Items)
             .Cascade.All();
     }

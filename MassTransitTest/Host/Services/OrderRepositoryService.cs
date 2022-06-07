@@ -1,6 +1,8 @@
-﻿using Host.Data;
+﻿using Host.Contracts;
+using Host.Data;
 using Models;
 using NHibernate.Linq;
+using OrderSaga = Models.OrderSaga;
 
 namespace Host.Services;
 
@@ -38,6 +40,39 @@ public class OrderRepositoryService : IOrderRepositoryService
             using var session = db.OpenSession();
             using var transaction = session.BeginTransaction();
 
+            await session.SaveOrUpdateAsync(orderSaga);
+            await transaction.CommitAsync();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError($"1 {ex.ToString()}");
+            _logger.LogError($"2 {ex.Message}");
+            var err = ex;
+            while (err.InnerException != null)
+            {
+                err = err.InnerException;
+                _logger.LogError($"3 {err.Message}");
+            }
+        }
+    }
+
+    public async Task UpdateOrderStatus(long sagaOrderSagaId, OrderStatus messageNextStatus)
+    {
+        try
+        {
+            using var db = _db.GetSession();
+            using var session = db.OpenSession();
+            using var transaction = session.BeginTransaction();
+
+            var orderSaga = await session.Query<OrderSaga>().FirstOrDefaultAsync(x => x.Id == sagaOrderSagaId);
+            if (orderSaga == null)
+            {
+                throw new Exception($"Not found Order id {sagaOrderSagaId}");
+            }
+
+            orderSaga.UpdatedDate = _time.Now;
+            orderSaga.OrderStatus = messageNextStatus;
+            
             await session.SaveOrUpdateAsync(orderSaga);
             await transaction.CommitAsync();
         }

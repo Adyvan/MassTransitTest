@@ -1,7 +1,9 @@
 using Host.Contracts;
+using Host.Helpers;
 using Host.Services;
 using MassTransit;
 using Models;
+using OrderSaga = Models.OrderSaga;
 
 namespace Host.Consumers;
 
@@ -10,13 +12,16 @@ public class AddOrderConsumer :
 {
     readonly ILogger<AddOrderConsumer> _logger;
     readonly IOrderRepositoryService _orderRepository;
+    readonly IBus _bus;
 
     public AddOrderConsumer(
         ILogger<AddOrderConsumer> logger,
-        IOrderRepositoryService orderRepository)
+        IOrderRepositoryService orderRepository, 
+        IBus bus)
     {
         _logger = logger;
         _orderRepository = orderRepository;
+        _bus = bus;
     }
 
     public async Task Consume(ConsumeContext<AddOrder> context)
@@ -26,14 +31,18 @@ public class AddOrderConsumer :
             CustomerName = context.Message.CustomerName,
             CustomerSurname = context.Message.CustomerSurname,
             ShippedDate = context.Message.ShippedDate,
-            Items =  context.Message.Items.Select(item => new OrderSagaItem()
+            Items = context.Message.Items.Select(item => new OrderSagaItem()
             {
-                Sku =item.Sku,
+                Sku = item.Sku,
                 Price = item.Price,
                 Quantity = item.Quantity,
             }).ToList(),
+            OrderStatus = OrderStatus.Initial,
         };
-        await _orderRepository.AddOrderAsync(newOrder);
-        _logger.LogInformation("Added order");
+        
+        await _orderRepository.AddOrderAsync(newOrder).ConfigureAwait(false);
+        await _bus.Publish(new OrderCreated(newOrder.Id, newOrder.Id.ToGuid())).ConfigureAwait(false);
+        
+        _logger.LogInformation($"Added order {newOrder.Id}");
     }
 }

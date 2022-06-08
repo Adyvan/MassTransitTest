@@ -13,5 +13,5 @@ public enum OrderStatus : byte
     Cancelled = 8,
     Shipped = 16,
     
-    CanCancel = Initial | AwaitingPacking | Packed,
+    CanCustomUpdate = Packed | Cancelled | Shipped,
 }

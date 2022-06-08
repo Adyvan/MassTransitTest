@@ -9,22 +9,20 @@ namespace Host.StateMachines.OrderActivities;
 
 public class InitiatedOrderActivity: IStateMachineActivity<OrderSaga, OrderCreated>
 {
-    readonly ConsumeContext _context; 
-    readonly ILogger<UpdateOrderActivity> _logger;
+    readonly ILogger<InitiatedOrderActivity> _logger;
     readonly IOrderRepositoryService _orderRepository;
 
     public InitiatedOrderActivity(ConsumeContext context,
-        ILogger<UpdateOrderActivity> logger,
+        ILogger<InitiatedOrderActivity> logger,
         IOrderRepositoryService orderRepository)
     {
-        _context = context;
         _logger = logger;
         _orderRepository = orderRepository;
     }
 
     public void Probe(ProbeContext context)
     {
-        context.CreateScope("order-status-changed");
+        context.CreateScope("order-init");
     }
 
     public void Accept(StateMachineVisitor visitor)

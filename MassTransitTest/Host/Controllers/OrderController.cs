@@ -71,7 +71,12 @@ public class OrderController : ControllerBase
     [Route("{id:long}/UpdateStatus")]
     public async Task<ActionResult> Update([FromRoute] long id, [FromQuery] OrderStatus newState)
     {
-        await _bus.Publish(new OrderStatusChanged(id.ToGuid(), newState));
-        return new OkResult();
+        if (OrderStatus.CanCustomUpdate.HasFlag(newState))
+        {
+            await _bus.Publish(new OrderStatusChange(id.ToGuid(), newState));
+            return new OkResult();
+        }
+
+        return new BadRequestObjectResult(new { Message = $"Cant Change to {newState}"});
     }
 }

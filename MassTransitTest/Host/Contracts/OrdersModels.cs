@@ -11,4 +11,9 @@ public record OrderSaga :
     public OrderStatus OrderStatus { get; set; }
 }
 public record OrderCreated(Guid CorrelationId);
-public record OrderStatusChanged (Guid CorrelationId, OrderStatus NextStatus);
+public record OrderStatusChange (Guid CorrelationId, OrderStatus NextStatus) : IConsumer;
+
+public record OrderStatusChanged(Guid CorrelationId, OrderStatus NextStatus);
+public record OrderCancelled(Guid CorrelationId) : OrderStatusChanged(CorrelationId, OrderStatus.Cancelled);
+public record OrderPacked(Guid CorrelationId) : OrderStatusChanged(CorrelationId, OrderStatus.Packed);
+public record OrderShipped(Guid CorrelationId) : OrderStatusChanged(CorrelationId, OrderStatus.Shipped);

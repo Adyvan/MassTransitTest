@@ -5,17 +5,15 @@ using MassTransit;
 
 namespace Host.StateMachines.OrderActivities;
 
-public class UpdateOrderActivity : IStateMachineActivity<OrderSaga, OrderStatusChanged>
+public class UpdateOrderActivity<T> : IStateMachineActivity<OrderSaga, T> where T: OrderStatusChanged
 {
-    readonly ConsumeContext _context; 
-    readonly ILogger<UpdateOrderActivity> _logger;
+    readonly ILogger<UpdateOrderActivity<T>> _logger;
     readonly IOrderRepositoryService _orderRepository;
 
-    public UpdateOrderActivity(ConsumeContext context,
-        ILogger<UpdateOrderActivity> logger,
+    public UpdateOrderActivity(
+        ILogger<UpdateOrderActivity<T>> logger,
         IOrderRepositoryService orderRepository)
     {
-        _context = context;
         _logger = logger;
         _orderRepository = orderRepository;
     }
@@ -30,7 +28,7 @@ public class UpdateOrderActivity : IStateMachineActivity<OrderSaga, OrderStatusC
         visitor.Visit(this);
     }
 
-    public async Task Execute(BehaviorContext<OrderSaga, OrderStatusChanged> context, IBehavior<OrderSaga, OrderStatusChanged> next)
+    public async Task Execute(BehaviorContext<OrderSaga, T> context, IBehavior<OrderSaga, T> next)
     {
         _logger.LogInformation($"Execute from {context.Saga.OrderStatus} to {context.Message.NextStatus}");
         context.Saga.OrderStatus = context.Message.NextStatus;
@@ -40,8 +38,9 @@ public class UpdateOrderActivity : IStateMachineActivity<OrderSaga, OrderStatusC
         await next.Execute(context).ConfigureAwait(false);
     }
 
-    public Task Faulted<TException>(BehaviorExceptionContext<OrderSaga, OrderStatusChanged, TException> context, IBehavior<OrderSaga, OrderStatusChanged> next) where TException : Exception
+    public Task Faulted<TException>(BehaviorExceptionContext<OrderSaga, T, TException> context, IBehavior<OrderSaga, T> next) where TException : Exception
     {
         return next.Faulted(context);
+
     }
 }

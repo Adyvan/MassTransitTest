@@ -3,7 +3,7 @@ using Models;
 
 namespace Host.Data.Mapping;
 
-public class OrderSagaItemMap : ClassMap<OrderSagaItem>
+public class OrderSagaItemMap : ClassMap<OrderItem>
 {
     public OrderSagaItemMap()
     {

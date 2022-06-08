@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  rabbitmq:
+    image: masstransit/rabbitmq
+    command: mongod --port 27077
+    restart: always
+    ports:
+      - 15672:15672
+      - 5672:5672
+  mssql:
+    image: mcr.microsoft.com/mssql/server:latest
+    restart: always
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=yourStrong(!)Password123
+    ports:
+      - 1433:1433
+  migrations:
+    build: ./Database
+    restart: "no"
+    depends_on:
+      - rabbitmq
+      - mssql
+  web:
+    build: ./Host
+    depends_on:
+      - rabbitmq
+      - mssql

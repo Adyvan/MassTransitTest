@@ -1,6 +1,6 @@
 ﻿namespace Models;
 
-public class OrderSaga
+public class Order
 {
     public virtual long Id { get; set; }
     
@@ -11,7 +11,7 @@ public class OrderSaga
     public virtual string CustomerSurname { get; set; }
     public virtual DateTime? ShippedDate { get; set; }
 
-    public virtual IList<OrderSagaItem> Items { get; set; }
+    public virtual IList<OrderItem> Items { get; set; }
     
     public virtual int CurrentState { get; set; }
 

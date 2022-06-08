@@ -1,6 +1,4 @@
 ﻿using Host.Contracts;
-using Host.Helpers;
-using Host.Services;
 using Host.StateMachines.OrderActivities;
 using MassTransit;
 using Models;

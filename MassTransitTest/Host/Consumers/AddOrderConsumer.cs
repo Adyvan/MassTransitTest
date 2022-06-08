@@ -3,7 +3,6 @@ using Host.Helpers;
 using Host.Services;
 using MassTransit;
 using Models;
-using OrderSaga = Models.OrderSaga;
 
 namespace Host.Consumers;
 
@@ -26,12 +25,12 @@ public class AddOrderConsumer :
 
     public async Task Consume(ConsumeContext<AddOrder> context)
     {
-        var newOrder = new OrderSaga
+        var newOrder = new Order
         {
             CustomerName = context.Message.CustomerName,
             CustomerSurname = context.Message.CustomerSurname,
             ShippedDate = context.Message.ShippedDate,
-            Items = context.Message.Items.Select(item => new OrderSagaItem()
+            Items = context.Message.Items.Select(item => new OrderItem()
             {
                 Sku = item.Sku,
                 Price = item.Price,

@@ -5,6 +5,7 @@ using Host.Services;
 using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 using Models;
+using OrderItem = Host.CommunicationProtocols.Order.OrderItem;
 
 namespace Host.Controllers;
 

@@ -2,7 +2,6 @@
 using Host.Data;
 using Models;
 using NHibernate.Linq;
-using OrderSaga = Models.OrderSaga;
 
 namespace Host.Services;
 
@@ -19,20 +18,20 @@ public class OrderRepositoryService : IOrderRepositoryService
         _logger = logger;
     }
 
-    public IList<OrderSaga> GetOrders()
+    public IList<Order> GetOrders()
     {
         using var db = _db.GetSession();
         using var session = db.OpenSession();
 
-        return session.Query<OrderSaga>()
+        return session.Query<Order>()
             .Fetch(x => x.Items)
             .ToList();
     }
 
-    public async Task AddOrderAsync(OrderSaga orderSaga)
+    public async Task AddOrderAsync(Order order)
     {
-        orderSaga.OrderDate = _time.Now;
-        orderSaga.UpdatedDate = orderSaga.OrderDate;
+        order.OrderDate = _time.Now;
+        order.UpdatedDate = order.OrderDate;
 
         try
         {
@@ -40,7 +39,7 @@ public class OrderRepositoryService : IOrderRepositoryService
             using var session = db.OpenSession();
             using var transaction = session.BeginTransaction();
 
-            await session.SaveOrUpdateAsync(orderSaga);
+            await session.SaveOrUpdateAsync(order);
             await transaction.CommitAsync();
         }
         catch (Exception ex)
@@ -64,7 +63,7 @@ public class OrderRepositoryService : IOrderRepositoryService
             using var session = db.OpenSession();
             using var transaction = session.BeginTransaction();
 
-            var orderSaga = await session.Query<OrderSaga>().FirstOrDefaultAsync(x => x.Id == sagaOrderSagaId);
+            var orderSaga = await session.Query<Order>().FirstOrDefaultAsync(x => x.Id == sagaOrderSagaId);
             if (orderSaga == null)
             {
                 throw new Exception($"Not found Order id {sagaOrderSagaId}");

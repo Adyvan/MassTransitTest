@@ -1,6 +1,6 @@
 ﻿namespace Models;
 
-public class OrderSagaItem
+public class OrderItem
 {
     public virtual long Id { get; set; }
     public virtual long OrderId { get; set; }
@@ -9,5 +9,5 @@ public class OrderSagaItem
     public virtual decimal Price { get; set; }
     public virtual byte Quantity { get; set; }
 
-    public virtual OrderSaga Order { get; set; }
+    public virtual Order Order { get; set; }
 }

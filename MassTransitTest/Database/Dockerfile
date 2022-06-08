@@ -3,8 +3,12 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["Database/Database.csproj", "Database/"]
+COPY ["Database.csproj", "Database/"]
 RUN dotnet restore "Database/Database.csproj"
+RUN echo $(pwd) 
+RUN echo $(ls) 
+COPY ["Models.csproj", "./Models/"]
+RUN dotnet restore "Models/Models.csproj"
 COPY . .
 WORKDIR "/src/Database"
 RUN dotnet build "Database.csproj" -c Release -o /app/build

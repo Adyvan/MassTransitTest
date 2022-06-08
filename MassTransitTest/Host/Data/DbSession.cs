@@ -18,7 +18,7 @@ public class DbSession : IDbSession
             .Mappings(m =>
             {
                 m.FluentMappings.AddFromAssembly(Assembly.GetAssembly(typeof(OrderSagaMap)));
-                // m.FluentMappings.AddFromAssembly(Assembly.GetAssembly(typeof(OrderSaga)));
+                // m.FluentMappings.AddFromAssembly(Assembly.GetAssembly(typeof(Order)));
             })
             .ExposeConfiguration(BuildSchema)
             .BuildSessionFactory();

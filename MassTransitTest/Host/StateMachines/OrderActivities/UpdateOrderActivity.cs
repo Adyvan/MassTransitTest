@@ -22,7 +22,7 @@ public class UpdateOrderActivity : IStateMachineActivity<OrderSaga, OrderStatusC
 
     public void Probe(ProbeContext context)
     {
-        context.CreateScope("publish-order-submitted");
+        context.CreateScope("order-status-changed");
     }
 
     public void Accept(StateMachineVisitor visitor)

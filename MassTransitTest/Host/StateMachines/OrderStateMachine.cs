@@ -33,13 +33,18 @@ public class OrderStateMachine : MassTransitStateMachine<OrderSaga>
 
         Initially(
             When(OnInitiated)
-                .TransitionTo(AwaitingPacking),
+                .Send(x=> new OrderStatusChanged(x.Saga.CorrelationId, OrderStatus.AwaitingPacking)),
             When(OnChange)
                 .If(
                     x => (int)x.Saga.OrderStatus < (int)x.Message.NextStatus,
                     x =>
                         x.Activity(s => s.OfType<UpdateOrderActivity>())
+                            .If(c => c.Message.NextStatus == OrderStatus.AwaitingPacking, c => c.TransitionTo(AwaitingPacking))
+                            .If(c => c.Message.NextStatus == OrderStatus.Packed, c => c.TransitionTo(Packed))
+                            .If(c => c.Message.NextStatus == OrderStatus.Shipped, c => c.TransitionTo(Shipped).Finalize())
+                            .If(c => c.Message.NextStatus == OrderStatus.Cancelled, c => c.TransitionTo(Cancelled).Finalize())
                 )
+
         );
 
         DuringAny(

@@ -7,13 +7,13 @@ using OrderSaga = Host.Contracts.OrderSaga;
 
 namespace Host.StateMachines.OrderActivities;
 
-public class InitiatedOrderActivity: IStateMachineActivity<OrderSaga, OrderCreated>
+public class OrderCancelledActivity: IStateMachineActivity<OrderSaga, OrderCancelled>
 {
-    readonly ILogger<InitiatedOrderActivity> _logger;
+    readonly ILogger<OrderCancelledActivity> _logger;
     readonly IOrderRepositoryService _orderRepository;
 
-    public InitiatedOrderActivity(ConsumeContext context,
-        ILogger<InitiatedOrderActivity> logger,
+    public OrderCancelledActivity(
+        ILogger<OrderCancelledActivity> logger,
         IOrderRepositoryService orderRepository)
     {
         _logger = logger;
@@ -22,7 +22,7 @@ public class InitiatedOrderActivity: IStateMachineActivity<OrderSaga, OrderCreat
 
     public void Probe(ProbeContext context)
     {
-        context.CreateScope("order-init");
+        context.CreateScope("order-cancelled");
     }
 
     public void Accept(StateMachineVisitor visitor)
@@ -30,18 +30,19 @@ public class InitiatedOrderActivity: IStateMachineActivity<OrderSaga, OrderCreat
         visitor.Visit(this);
     }
 
-    public async Task Execute(BehaviorContext<OrderSaga, OrderCreated> context, IBehavior<OrderSaga, OrderCreated> next)
+    public async Task Execute(BehaviorContext<OrderSaga, OrderCancelled> context, IBehavior<OrderSaga, OrderCancelled> next)
     {
-        _logger.LogInformation($"Execute from {context.Saga.OrderStatus} to {OrderStatus.AwaitingPacking}");
-        context.Saga.OrderStatus = OrderStatus.AwaitingPacking;
-        
+        _logger.LogInformation($"Execute from {context.Saga.OrderStatus} to Cancelled");
+        context.Saga.OrderStatus = OrderStatus.Cancelled;
+
         await _orderRepository.UpdateOrderStatus(context.Saga.CorrelationId.ToId(), context.Saga.OrderStatus).ConfigureAwait(false);
         
         await next.Execute(context).ConfigureAwait(false);
     }
 
-    public Task Faulted<TException>(BehaviorExceptionContext<OrderSaga, OrderCreated, TException> context, IBehavior<OrderSaga, OrderCreated> next) where TException : Exception
+    public Task Faulted<TException>(BehaviorExceptionContext<OrderSaga, OrderCancelled, TException> context, IBehavior<OrderSaga, OrderCancelled> next) where TException : Exception
     {
         return next.Faulted(context);
+
     }
 }

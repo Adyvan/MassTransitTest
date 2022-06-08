@@ -32,11 +32,32 @@ public class OrderStateMachine : MassTransitStateMachine<OrderSaga>
                 OrderStatus = OrderStatus.Initial,
             });
         });
-        Event(() => OnPacked, x => { x.CorrelateById(context => context.Message.CorrelationId); });
+        Event(() => OnPacked, x =>
+        {
+            x.CorrelateById(context => context.Message.CorrelationId);
+            x.SetSagaFactory(context => new OrderSaga
+            {
+                CorrelationId = context.Message.CorrelationId,
+                OrderStatus = OrderStatus.AwaitingPacking,
+            });
+        });
 
-        Event(() => OnShipped, x => { x.CorrelateById(context => context.Message.CorrelationId); });
+        Event(() => OnShipped, x => { x.CorrelateById(context => context.Message.CorrelationId);
+            x.SetSagaFactory(context => new OrderSaga
+            {
+                CorrelationId = context.Message.CorrelationId,
+                OrderStatus = OrderStatus.Packed,
+            });
+        });
 
-        Event(() => OnCancelled, x => { x.CorrelateById(context => context.Message.CorrelationId); });
+        Event(() => OnCancelled, x =>
+        {
+            x.CorrelateById(context => context.Message.CorrelationId);
+            x.SetSagaFactory(context => new OrderSaga
+            {
+                CorrelationId = context.Message.CorrelationId,
+            });
+        });
 
 
         InstanceState(x => x.CurrentState,
@@ -44,15 +65,38 @@ public class OrderStateMachine : MassTransitStateMachine<OrderSaga>
             Packed,
             Shipped,
             Cancelled);
+        
+        Initially(
+            When(OnInitiated)
+                .Activity(x=> x.OfType<InitiatedOrderActivity>())
+                .TransitionTo(AwaitingPacking)
+        );
 
         During(AwaitingPacking,
-            Ignore(OnInitiated), 
-            Ignore(OnShipped), 
-            Ignore(OnCancelled));
-        
-        During(Packed, 
-            Ignore(OnInitiated), 
-            Ignore(OnPacked));
+            Ignore(OnInitiated),
+            Ignore(OnShipped),
+            Ignore(OnCancelled),
+            When(OnPacked)
+                .Activity(x => x.OfType<OrderPackedActivity>())
+                .TransitionTo(Packed), 
+            When(OnCancelled)
+                .Activity(x => x.OfType<OrderCancelledActivity>())
+                .TransitionTo(Cancelled)
+                .Finalize()
+        );
+
+        During(Packed,
+            Ignore(OnInitiated),
+            Ignore(OnPacked),
+            When(OnShipped)
+                .Activity(x => x.OfType<OrderShippedActivity>())
+                .TransitionTo(Shipped)
+                .Finalize(),
+            When(OnCancelled)
+                .Activity(x => x.OfType<OrderCancelledActivity>())
+                .TransitionTo(Cancelled)
+                .Finalize()
+        );
         
         During(Cancelled,
             Ignore(OnInitiated),
@@ -65,23 +109,6 @@ public class OrderStateMachine : MassTransitStateMachine<OrderSaga>
             Ignore(OnPacked),
             Ignore(OnShipped),
             Ignore(OnCancelled));
-
-        Initially(
-            When(OnInitiated)
-                .Activity(x=> x.OfType<InitiatedOrderActivity>())
-                .TransitionTo(AwaitingPacking),
-            When(OnPacked)
-                .Activity(x=> x.OfType<UpdateOrderActivity<OrderPacked>>())
-                .TransitionTo(Packed),
-            When(OnShipped)
-                .Activity(x=> x.OfType<UpdateOrderActivity<OrderShipped>>())
-                .TransitionTo(Shipped)
-                .Finalize(),
-            When(OnCancelled)
-                .Activity(x=> x.OfType<UpdateOrderActivity<OrderCancelled>>())
-                .TransitionTo(Cancelled)
-                .Finalize()
-        );
 
         SetCompletedWhenFinalized();
     }

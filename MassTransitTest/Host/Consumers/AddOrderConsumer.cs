@@ -41,8 +41,8 @@ public class AddOrderConsumer :
         };
         
         await _orderRepository.AddOrderAsync(newOrder).ConfigureAwait(false);
-        await _bus.Publish(new OrderCreated(newOrder.Id)).ConfigureAwait(false);
+        await _bus.Publish(new OrderCreated(newOrder.Id.ToGuid())).ConfigureAwait(false);
         
-        _logger.LogInformation($"Added order {newOrder.Id}");
+        _logger.LogInformation($"Added order id:{newOrder.Id}");
     }
 }

@@ -1,5 +1,4 @@
 ﻿using Host.Contracts;
-using Host.Helpers;
 using Host.StateMachines.OrderActivities;
 using MassTransit;
 using Models;
@@ -13,11 +12,12 @@ public class OrderStateMachine : MassTransitStateMachine<OrderSaga>
     {
         Event(() => OnInitiated, x =>
         {
-            x.CorrelateById(context => context.Message.OrderSagaId.ToGuid());
+            x.CorrelateById(context => context.Message.CorrelationId);
             x.InsertOnInitial = true;
             x.SetSagaFactory(context => new OrderSaga
             {
-                CorrelationId = context.Message.OrderSagaId.ToGuid()
+                CorrelationId = context.Message.CorrelationId,
+                OrderStatus = OrderStatus.Initial,
             });
         });
         Event(() => OnChange, x =>
@@ -25,32 +25,34 @@ public class OrderStateMachine : MassTransitStateMachine<OrderSaga>
             x.CorrelateById(context => context.Message.CorrelationId);
         });
         
-        InstanceState(x => x.CurrentState, Inicial, // OnInitiated 
-            AwaitingPacking, // OnPacked 
-            Packed, //OnShipped
+        InstanceState(x => x.CurrentState, 
+            AwaitingPacking,
+            Packed,
             Shipped,
             Cancelled);
 
         Initially(
             When(OnInitiated)
-                .Send(x=> new OrderStatusChanged(x.Saga.CorrelationId, OrderStatus.AwaitingPacking)),
+                .Activity(s => s.OfType<InitiatedOrderActivity>())
+                .TransitionTo(AwaitingPacking),
             When(OnChange)
-                .If(
+                .IfElse(
                     x => (int)x.Saga.OrderStatus < (int)x.Message.NextStatus,
                     x =>
                         x.Activity(s => s.OfType<UpdateOrderActivity>())
-                            .If(c => c.Message.NextStatus == OrderStatus.AwaitingPacking, c => c.TransitionTo(AwaitingPacking))
                             .If(c => c.Message.NextStatus == OrderStatus.Packed, c => c.TransitionTo(Packed))
                             .If(c => c.Message.NextStatus == OrderStatus.Shipped, c => c.TransitionTo(Shipped).Finalize())
-                            .If(c => c.Message.NextStatus == OrderStatus.Cancelled, c => c.TransitionTo(Cancelled).Finalize())
+                            .If(c => c.Message.NextStatus == OrderStatus.Cancelled, c => c.TransitionTo(Cancelled).Finalize()),
+                    x=> x.(c=> c)
                 )
 
         );
+        During(AwaitingPacking, Ignore(OnInitiated));
 
-        DuringAny(
-            When(OnChange)
-                .If(x => x.Message.NextStatus == OrderStatus.Cancelled && OrderStatus.CanCancel.HasFlag(x.Saga.OrderStatus),
-                    x => x.Finalize()));
+        // DuringAny(
+        //     When(OnChange)
+        //         .If(x => x.Message.NextStatus == OrderStatus.Cancelled && OrderStatus.CanCancel.HasFlag(x.Saga.OrderStatus),
+        //             x => x.Finalize()));
 
         SetCompletedWhenFinalized();
     }
@@ -60,7 +62,6 @@ public class OrderStateMachine : MassTransitStateMachine<OrderSaga>
         throw new NotImplementedException();
     }
 
-    public State Inicial { get; set; }
     public State AwaitingPacking { get; set; }
     public State Packed { get; set; }
     public State Shipped { get; set; }

@@ -34,8 +34,9 @@ builder.Host.ConfigureServices((hostContext, services) =>
     
     Dependencies.SetDependencies(services);
 });
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddNewtonsoftJson();
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGenNewtonsoftSupport();
 builder.Services.AddSwaggerGen();
 
 

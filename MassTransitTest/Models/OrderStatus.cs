@@ -1,6 +1,10 @@
-﻿namespace Models;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
+namespace Models;
 
 [Flags]
+[JsonConverter(typeof(StringEnumConverter))]  
 public enum OrderStatus : byte
 {
     Initial = 1,

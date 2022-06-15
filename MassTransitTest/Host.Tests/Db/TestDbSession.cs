@@ -1,16 +1,15 @@
-﻿using System.Data.SqlTypes;
-using System.Reflection;
+﻿using System.Reflection;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
+using Host.Data;
 using Host.Data.Mapping;
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
-using ISession = Microsoft.AspNetCore.Http.ISession;
 
-namespace Host.Data;
+namespace Host.Tests.Db;
 
-public class DbSession : IDbSession
+public class TestDbSession : IDbSession
 {
     public ISessionFactory GetSession()
     {
@@ -31,4 +30,22 @@ public class DbSession : IDbSession
         new SchemaUpdate(config)
             .Execute(true, true);
     }
+    // public ISessionFactory GetSession()
+    // {
+    //     return Fluently.Configure()
+    //         .Database(SQLiteConfiguration.Standard.InMemory())
+    //         .Mappings(m =>
+    //         {
+    //             m.FluentMappings.AddFromAssembly(Assembly.GetAssembly(typeof(OrderSagaMap)));
+    //             // m.FluentMappings.AddFromAssembly(Assembly.GetAssembly(typeof(Order)));
+    //         })
+    //         .ExposeConfiguration(BuildSchema)
+    //         .BuildSessionFactory();
+    // }
+    //
+    // private static void BuildSchema(Configuration config)
+    // {
+    //     new SchemaUpdate(config)
+    //         .Execute(true, true);
+    // }
 }

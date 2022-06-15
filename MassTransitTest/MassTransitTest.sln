@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostTest", "HostTest\HostTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{46CC3E1C-768E-4F6F-AB99-68FB01DB9E79}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Host.Tests", "Host.Tests\Host.Tests.csproj", "{8FBFE4D0-A3C8-4268-A50E-5D828E1707DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{46CC3E1C-768E-4F6F-AB99-68FB01DB9E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46CC3E1C-768E-4F6F-AB99-68FB01DB9E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46CC3E1C-768E-4F6F-AB99-68FB01DB9E79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FBFE4D0-A3C8-4268-A50E-5D828E1707DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FBFE4D0-A3C8-4268-A50E-5D828E1707DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FBFE4D0-A3C8-4268-A50E-5D828E1707DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FBFE4D0-A3C8-4268-A50E-5D828E1707DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
